@@ -1,3 +1,4 @@
+import { AppRoutingModule } from './app-routing.module';
 import { MessageService } from './message.service';
 import { HeroService } from './hero.service';
 import { BrowserModule } from '@angular/platform-browser';
@@ -20,9 +21,10 @@ import { MessagesComponent } from './messages/messages.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AppRoutingModule
   ],
-  providers: [HeroService,MessageService],
+  providers: [HeroService, MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
