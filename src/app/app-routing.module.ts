@@ -9,7 +9,7 @@ const routes: Routes = [
   {path: 'dashboard', component: DashboardComponent},
   {path: '', redirectTo: '/dashboard',pathMatch: 'full'},
   {path: 'detail/:id', component: HeroDetailsComponent},
-];
+]
 
 @NgModule({
   imports: [ RouterModule.forRoot(routes)
