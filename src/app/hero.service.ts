@@ -19,7 +19,7 @@ export class HeroService {
     );
   }
 
-  private log(message: string): void{
+  log(message: string): void{
     this.messageService.add('HeroService: ' + message);
   }
   
@@ -42,4 +42,9 @@ export class HeroService {
     }
   }
   
+  updateHero (hero: Hero): Observable<any> {
+    return this.http.put(this.heroesUrl,hero)
+      .pipe(tap(_ => this.log(`updated hero id = ${hero.id}`),
+    catchError(this.handleError<any>('updateHero'))));
+  }
 }

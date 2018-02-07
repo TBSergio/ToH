@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { HeroService } from './../hero.service';
 import { Hero } from './../hero';
 import { Component, OnInit, Input } from '@angular/core';
+import { log } from 'util';
 
 @Component({
   selector: 'app-hero-details',
@@ -31,5 +32,9 @@ export class HeroDetailsComponent implements OnInit {
 
   goBack(): void {
     this.location.back();
+  }
+
+  save(): void{
+    this.heroService.updateHero(this.hero).subscribe(() => this.heroService.log('Saved Changes'));
   }
 }
